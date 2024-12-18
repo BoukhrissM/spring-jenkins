@@ -18,6 +18,13 @@ pipeline {
                     // To run Maven on a Windows agent, use
                     bat "mvn -Dmaven.test.failure.ignore=true clean package"
                 }
-            }
+        }
+
+        stage('Copy') {
+                        steps {
+                            // To run Maven on a Windows agent, use
+                            bat "copy target\\jenkinsTPspring-0.0.1-SNAPSHOT.jar C:\\Users\\bouuk\\Desktop\\cours\\jenkinsTp\\deploy\\jenkinsTPspring-0.0.1-SNAPSHOT.jar"
+                        }
+        }
     }
 }
